@@ -8,25 +8,34 @@
         <title>Prodotti per cani e gatti</title>
     </head>
     <body>
-        <?php 
-            require_once __DIR__ .'/classes/Product.php';
-            require_once __DIR__ .'/classes/Category.php';
+        <header>
+            <h1 class="text-center">
+                Prodotti per cani e gatti
+            </h1>
+        </header>
+        <main>
+            <div class="container">
+                <?php 
+                    require_once __DIR__ .'/classes/Product.php';
+                    require_once __DIR__ .'/classes/Category.php';
 
-            foreach ($products as $product) {
-                //var_dump($product);
-        ?>
-        <div class="card" style="width: 18rem;">
-            <img src="<?php echo $product-> image?>" class="card-img-top" alt="<?php echo $product-> name?>">
-            <div class="card-body">
-                <h5 class="card-title"><?php echo $product -> title ?></h5>
-                <h6 class="card-title"><?php echo $product -> name ?></h6>
-                <p class="card-text"><?php echo $product -> getPrice() ?></p>
-                <p class="card-text"><?php echo $product -> notes ?></p>
-                <p class="card-text"><?php echo $product ->category-> name ?></p>
+                    foreach ($products as $product) {
+                        //var_dump($product);
+                ?>
+                <div class="card mb-3" style="width: 18rem;">
+                    <img src="<?php echo $product-> image?>" class="card-img-top" alt="<?php echo $product-> name?>">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $product -> title ?></h5>
+                        <h6 class="card-title"><?php echo $product -> name ?></h6>
+                        <p class="card-text text-warning"><?php echo $product -> getPrice() ?></p>
+                        <p class="card-text"><?php echo $product -> notes ?></p>
+                        <p class="card-text"><strong><?php echo $product ->category-> name ?></strong></p>
+                    </div>
+                </div>
+                <?php
+                    } 
+                ?>
             </div>
-        </div>
-        <?php
-            } 
-        ?>
+        </main>
     </body>
 </html>
