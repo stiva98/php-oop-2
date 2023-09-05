@@ -26,9 +26,12 @@
                     <img src="<?php echo $product-> image?>" class="card-img-top" alt="<?php echo $product-> name?>">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $product -> name ?></h5>
-                        <p class="card-text text-warning"><?php echo $product -> getPrice() ?></p>
+                        <p class="card-text text-warning"><?php echo $product -> getPrice() .'€'?></p>
                         <p class="card-text"><?php echo $product -> notes ?></p>
-                        <p class="card-text"><strong><?php echo $product ->category-> name ?></strong></p>
+                        <div class="d-flex">
+                            <p class="card-text"><strong><?php echo $product ->category-> name ?></strong></p>
+                            <img src="<?php echo $product ->category-> icon ?>" alt="" class="w-25">
+                        </div>
                     </div>
                 </div>
                 <?php
