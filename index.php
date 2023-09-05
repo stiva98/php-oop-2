@@ -25,8 +25,7 @@
                 <div class="card mb-3" style="width: 18rem;">
                     <img src="<?php echo $product-> image?>" class="card-img-top" alt="<?php echo $product-> name?>">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $product -> title ?></h5>
-                        <h6 class="card-title"><?php echo $product -> name ?></h6>
+                        <h5 class="card-title"><?php echo $product -> name ?></h5>
                         <p class="card-text text-warning"><?php echo $product -> getPrice() ?></p>
                         <p class="card-text"><?php echo $product -> notes ?></p>
                         <p class="card-text"><strong><?php echo $product ->category-> name ?></strong></p>

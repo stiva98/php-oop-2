@@ -1,7 +1,8 @@
 <?php
+    require_once __DIR__ .'/../traits/trait.php';
     class Category 
     {
-        public $name;
+        use Name;
 
         public function __construct($name)
         {

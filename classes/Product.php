@@ -1,18 +1,18 @@
 <?php
 require_once __DIR__ .'/Category.php';
+require_once __DIR__ .'/../traits/trait.php';
     class Product 
     {
-        public $title;
+        use Name;
+
         protected $price;
         protected $id;
         public $image;
         public $notes;
-        public $name;
         public Category $category;
 
         public function __construct(
             $name,
-            $title,
             $price,
             $id,
             $image,
@@ -21,7 +21,6 @@ require_once __DIR__ .'/Category.php';
         )
         {
             $this->name = $name;
-            $this->title = $title;
             $this->price = $price;
             $this->id = $id;
             $this->image = $image;
@@ -49,7 +48,6 @@ require_once __DIR__ .'/Category.php';
 
     $products = [
         new Product(
-            'Toys',
             'Pupazzo',
             '49.00€',
             1,
@@ -58,7 +56,6 @@ require_once __DIR__ .'/Category.php';
             'Cane',
         ),
         new Product(
-            'Food',
             'Umido',
             '12.00€',
             2,
@@ -67,7 +64,6 @@ require_once __DIR__ .'/Category.php';
             'Gatto',
         ),
         new Product(
-            'Kennel',
             'Cuccia di legno',
             '100.00€',
             3,
